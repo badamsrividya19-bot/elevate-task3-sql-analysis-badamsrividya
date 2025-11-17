@@ -2,139 +2,115 @@ Task 3 – SQL for Data Analysis
 
 Author: Badam Sri Vidya
 Batch: B.Tech – CSE (Data Science), 4th Year
-Internship: Elevate Internship Program – Task 3 Submission
+Internship: Elevate Internship Program – Task 3
 University: Malla Reddy Institute of Engineering & Technology
 
 1. Project Introduction
 
-This repository contains all SQL tasks performed for Task 3 of the Elevate Internship.
-The analysis is executed on the ecommerce.db SQLite database and includes advanced SQL concepts such as:
+This repository contains all SQL tasks performed for Task 3 of the Elevate Internship Program.
+The work includes:
 
-Filtering
+SQL filtering & sorting
 
-Aggregations
-
-Grouping & ordering
+Grouping & aggregation
 
 JOIN operations
 
-Views
+Creating and querying SQL views
 
-Window functions
+Handling NULL values
 
-Handling NULLs
+Exporting results as CSV files
 
-Exporting query results
+All query outputs are stored inside the results/ folder.
 
-All output files are stored in the results folder.
+2. Repository Structure
+📁 root
+│
+├── 📄 ecommerce.db              → Main SQLite database  
+├── 📄 task3_queries.sql          → All SQL queries for Task 3  
+├── 📄 README.md                  → Documentation  
+│
+└── 📁 results/                   → Output CSV files generated from each query
+      ├── arpu.csv
+      ├── categories_avg_price_gt200.csv
+      ├── create_view.csv
+      ├── customers_above_average.csv
+      ├── customers_ordered_laptop.csv
+      ├── email_nulls.csv
+      ├── products_sales_leftjoin.csv
+      ├── query_view.csv
+      ├── select_india_customers.csv
+      └── total_sales_per_customer.csv
 
-2. Files Included in Repository
-Main Files
+3. SQL Task Explanations
+3.1 ARPU (Average Revenue Per User)
 
-ecommerce.db
-Main SQLite database used for performing SQL queries.
+Calculates the average spend per customer.
 
-task3_queries.sql
-Contains all SQL queries written for Task 3.
+Uses: SUM(), COUNT(), DISTINCT.
 
-README.md
-Documentation explaining the structure and purpose of the repository.
+3.2 Categories With Avg Price > 200
 
-3. Output Files (results/ folder)
+Identifies high-value product categories.
 
-Each CSV file is generated as output for a specific SQL query.
+Uses: GROUP BY, HAVING, AVG().
 
-arpu.csv — Average Revenue Per User
+3.3 Customers From India
 
-categories_avg_price_gt200.csv — Categories with average price above 200
+Filters customers based on country.
 
-create_view.csv — Generated from created SQL view
+Uses: WHERE.
 
-customers_above_average.csv — Customers with above-average spending
+3.4 Total Sales Per Customer
 
-customers_ordered_laptop.csv — Customers who bought a laptop
+Computes total order amount for each user.
 
-email_nulls.csv — NULL email records
+Uses: JOIN, SUM(), GROUP BY.
 
-products_sales_leftjoin.csv — Product-level sales using LEFT JOIN
+3.5 Product Sales – Left Join
 
-query_view.csv — Query results from SQL view
+Shows all products, even those with zero sales.
 
-select_india_customers.csv — Customers located in India
+Uses: LEFT JOIN, COALESCE().
 
-total_sales_per_customer.csv — Total customer spending
+3.6 NULL Email Detection
 
-4. Query Explanations (Easy to Explain in Interview)
+Shows customers with missing email IDs.
 
-Below is a simple explanation of every SQL query used.
+Uses: IS NULL.
 
-4.1 ARPU (Average Revenue Per User)
+3.7 Customers Who Purchased Laptop
 
-Purpose: To calculate average spending per user.
-Concepts Used: SUM, COUNT, DISTINCT.
+Identifies customers who ordered a laptop.
 
-4.2 Categories With Average Price > 200
+Uses: JOIN, WHERE.
 
-Purpose: To identify premium categories.
-Concepts Used: GROUP BY, HAVING, AVG.
+3.8 Creating SQL View
 
-4.3 Select Customers From India
+Creates a reusable summary for customer spending.
 
-Purpose: To filter customers based on country.
-Concepts Used: WHERE clause, ORDER BY.
+Uses: CREATE VIEW.
 
-4.4 Total Sales Per Customer
+3.9 Customers Above Average Spending
 
-Purpose: To calculate total spending and number of orders per customer.
-Concepts Used: JOIN, GROUP BY, SUM, COUNT.
+Compares spending against average customer spending.
 
-4.5 Left Join on Product Sales
+Uses: subqueries + HAVING.
 
-Purpose: To list all products even if they have zero sales.
-Concepts Used: LEFT JOIN, COALESCE.
+3.10 Querying the Created View
 
-4.6 Identify NULL Emails
+Uses the view to extract sorted customer spending.
 
-Purpose: To detect missing customer emails.
-Concepts Used: COALESCE for default values.
+Uses: ORDER BY.
 
-4.7 Customers Who Purchased Laptop
 
-Purpose: To filter customers by specific product.
-Concepts Used: EXISTS, subqueries, JOIN.
+4. Summary
 
-4.8 Create SQL View (customer_spend_view)
+This project demonstrates:
 
-Purpose: To create a reusable customer spending summary.
-Concepts Used: SQL VIEW.
-
-4.9 Customers Above Average Spending
-
-Purpose: To identify top-performing customers.
-Concepts Used: Subqueries, AVG, GROUP BY.
-
-4.10 Querying The View
-
-Purpose: To reuse a created view for easier analysis.
-Concepts Used: View usage, ORDER BY.
-
-5. Summary
-
-This project demonstrates proficiency in:
-
-SQL fundamentals
-
-Analytical SQL
-
-Joins, filtering, grouping, ordering
-
-Database design and view creation
-
-Exporting data for business analysis
-
-All results are organized in the results/ folder for easy evaluation.
-
-6. Status
-
-Task 3 Completed Successfully ✔
-Ready for submission and evaluation.
+✔ Strong SQL fundamentals
+✔ Analytical thinking
+✔ Ability to work with a real-world database
+✔ Structured data processing skills
+✔ Clean result documentation
