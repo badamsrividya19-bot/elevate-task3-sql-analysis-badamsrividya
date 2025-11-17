@@ -1,9 +1,9 @@
 📁 root
-│── ecommerce.db                # The main SQLite database
-│── task3_queries.sql           # All SQL queries for Task 3
-│── README.md                   # Documentation (this file)
+│── ecommerce.db                
+│── task3_queries.sql           
+│── README.md                   
 │
-└── 📁 results                  # Output CSV files generated from each query
+└── 📁 results        
        ├── arpu.csv
        ├── categories_avg_price_gt200.csv
        ├── create_view.csv
